@@ -12,7 +12,7 @@ var buffer     = require('vinyl-buffer');
 var glob       = require('glob');
 
 gulp.task('script', () => {
-  let scripts = glob.sync('./assets/javascripts/*.js');
+  let scripts = glob.sync('./assets/js/*.js');
   browserify({
     entries: scripts,
     transform: [reactify],
@@ -26,11 +26,11 @@ gulp.task('script', () => {
     loadMaps: true
   }))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./public/javascripts'));
+  .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./assets/javascripts/**/*.js', ['script']);
+  gulp.watch('./assets/js/**/*.js', ['script']);
 });
 
 gulp.task('default', ['script']);
