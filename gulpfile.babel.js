@@ -6,6 +6,7 @@ var sourcemaps = require('gulp-sourcemaps');
 // others
 var browserify = require('browserify');
 var babelify   = require('babelify');
+var reactify   = require('reactify');
 var source     = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
 var glob       = require('glob');
@@ -14,6 +15,7 @@ gulp.task('script', () => {
   let scripts = glob.sync('./assets/javascripts/*.js');
   browserify({
     entries: scripts,
+    transform: [reactify],
     debug: true
   })
   .transform(babelify)
