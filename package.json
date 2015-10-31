@@ -19,6 +19,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "jade": "~1.11.0",
     "jquery": "^2.1.4",
+    "mongoose": "^4.2.3",
     "morgan": "~1.6.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
